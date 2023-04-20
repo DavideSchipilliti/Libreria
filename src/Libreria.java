@@ -32,7 +32,11 @@ public class Libreria {
 	
 	public List<String> libriAutore(String autore){
 		Set<String> libriAutore=new LinkedHashSet<>();
-		collezioneLibri.forEach(libro->{if(libro.getAutore().equals(autore)) libriAutore.add(libro.getTitolo()); });
+		
+		for (Libro l : collezioneLibri) {
+			if(l.getAutore().equals(autore))
+				libriAutore.add(l.getTitolo());
+		}
 		return libriAutore.stream().collect(Collectors.toList());
 	}
 
