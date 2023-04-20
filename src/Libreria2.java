@@ -23,8 +23,7 @@ public class Libreria2 {
 	public int trova(String autore, double prezzo){
 		int cont=0;
 		for(Libro l : collezioneLibri) {
-			if(l.getAutore().equals(autore))
-				if(l.getPrezzo() > prezzo)
+			if(l.getAutore().equals(autore) && l.getPrezzo() > prezzo)
 					cont++;
 		}
 		return cont;

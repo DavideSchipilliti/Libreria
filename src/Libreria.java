@@ -1,7 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.LinkedHashSet;
 
 public class Libreria {
@@ -30,14 +29,14 @@ public class Libreria {
 				.count();
 	}
 	
-	public List<String> libriAutore(String autore){
+	public Set<String> libriAutore(String autore){
 		Set<String> libriAutore=new LinkedHashSet<>();
 		
 		for (Libro l : collezioneLibri) {
 			if(l.getAutore().equals(autore))
 				libriAutore.add(l.getTitolo());
 		}
-		return libriAutore.stream().collect(Collectors.toList());
+		return libriAutore;
 	}
 
 	@Override
